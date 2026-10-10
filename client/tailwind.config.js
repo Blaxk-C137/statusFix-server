@@ -6,7 +6,7 @@ export default {
     container: {
       center: true,
       padding: "1.5rem",
-      screens: { "2xl": "1200px" },
+      screens: { "2xl": "1280px" },
     },
     extend: {
       colors: {
@@ -45,7 +45,6 @@ export default {
         },
         whatsapp: {
           DEFAULT: "hsl(var(--whatsapp))",
-          dim: "hsl(var(--whatsapp-dim))",
         },
       },
       borderRadius: {
@@ -62,8 +61,38 @@ export default {
           from: { opacity: "0", transform: "translateY(12px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
-        "border-spin": {
-          to: { transform: "rotate(360deg)" },
+        "gradient-x": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
+        meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": { transform: "rotate(215deg) translateX(-500px)", opacity: "0" },
+        },
+        ripple: {
+          "0%, 100%": { transform: "translate(-50%, -50%) scale(1)" },
+          "50%": { transform: "translate(-50%, -50%) scale(0.9)" },
+        },
+        "border-beam": {
+          "100%": { offsetDistance: "100%" },
+        },
+        "shimmer-slide": {
+          to: { transform: "translate(calc(100cqw - 100%), 0)" },
+        },
+        "spin-around": {
+          "0%": { transform: "translateZ(0) rotate(0)" },
+          "15%, 35%": { transform: "translateZ(0) rotate(90deg)" },
+          "65%, 85%": { transform: "translateZ(0) rotate(270deg)" },
+          "100%": { transform: "translateZ(0) rotate(360deg)" },
         },
         shimmer: {
           from: { backgroundPosition: "200% 0" },
@@ -77,13 +106,26 @@ export default {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-8px)" },
         },
+        "scroll-dot": {
+          "0%": { opacity: "0", transform: "translateY(0)" },
+          "30%": { opacity: "1" },
+          "100%": { opacity: "0", transform: "translateY(14px)" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.5s ease-out both",
-        "border-spin": "border-spin 3s linear infinite",
+        "gradient-x": "gradient-x 4s ease infinite",
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+        meteor: "meteor 5s linear infinite",
+        ripple: "ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s) infinite",
+        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
+        "shimmer-slide": "shimmer-slide var(--speed) ease-in-out infinite alternate",
+        "spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
         shimmer: "shimmer 2.5s linear infinite",
         "pulse-glow": "pulse-glow 2.4s ease-in-out infinite",
         float: "float 5s ease-in-out infinite",
+        "scroll-dot": "scroll-dot 1.8s ease-in-out infinite",
       },
     },
   },

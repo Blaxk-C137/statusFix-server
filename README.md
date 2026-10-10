@@ -6,9 +6,20 @@ sized under WhatsApp's status limits so its compressor never degrades it.
 - 🖼 **Images** → optimized JPEG (max 1600px wide, guaranteed ≤ 5MB)
 - 🎬 **Videos** → H.264/AAC MP4 (720p, up to 3 min, two-pass encode sized to exactly ≤ 16MB)
 
-The UI is a shadcn/ui-style component system (Tailwind CSS + class-variance-authority)
-with framer-motion animations, lucide icons, a live upload-progress bar, and a
-dark WhatsApp-green design.
+The UI is a full 21st.dev-style experience built on the shadcn/ui pattern
+(Tailwind CSS + class-variance-authority + `cn()`), mixing:
+
+- **shadcn/ui primitives** — `Button` (CVA variants), `Card`, `Badge`, `Alert`, `Progress`
+- **Magic UI (21st.dev)** — `Particles`, `BorderBeam`, `ShimmerButton`, `Marquee`,
+  `NumberTicker`, `Meteors`, `Ripple`, `DotPattern`, `BlurFade`, `AnimatedGradientText`
+- **Aceternity UI (21st.dev)** — `MovingBorderButton`, 3D `CardContainer/CardItem`
+  (mouse-tracked tilt), `TextGenerateEffect`, `BackgroundBeams`
+- **GSAP** — cinematic per-character hero reveal, magnetic CTA, spring physics
+- **Three.js (@react-three/fiber + drei)** — a mouse-reactive distortion sphere
+  with sparkles behind the hero (lazy-loaded chunk so first paint stays fast)
+
+…all wrapped around the real optimizer flow with a live upload-progress bar,
+indeterminate encode state, and size-savings readout.
 
 ## Architecture
 
