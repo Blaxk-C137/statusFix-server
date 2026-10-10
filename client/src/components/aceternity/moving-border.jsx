@@ -19,7 +19,7 @@ export function MovingBorderButton({
   return (
     <Component
       className={cn(
-        "relative h-full w-full overflow-visible bg-transparent p-[1px] text-xl",
+        "relative h-full w-full overflow-hidden bg-transparent p-[1px] text-xl",
         containerClassName
       )}
       style={{ borderRadius }}

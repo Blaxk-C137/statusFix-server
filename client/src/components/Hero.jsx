@@ -104,23 +104,23 @@ export default function Hero() {
         </p>
 
         {/* Stats */}
-        <div className="hero-fade mt-8 flex items-center gap-8 sm:gap-12">
+        <div className="hero-fade mt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-12">
           <div className="text-left">
-            <div className="font-display text-3xl font-bold text-primary sm:text-4xl">
+            <div className="whitespace-nowrap font-display text-2xl font-bold text-primary sm:text-4xl">
               ≤<NumberTicker value={5} />MB
             </div>
             <p className="mt-1 text-xs text-muted-foreground/70">image output</p>
           </div>
           <div className="h-10 w-px bg-white/10" />
           <div className="text-left">
-            <div className="font-display text-3xl font-bold text-primary sm:text-4xl">
+            <div className="whitespace-nowrap font-display text-2xl font-bold text-primary sm:text-4xl">
               ≤<NumberTicker value={16} />MB
             </div>
             <p className="mt-1 text-xs text-muted-foreground/70">video output</p>
           </div>
           <div className="h-10 w-px bg-white/10" />
           <div className="text-left">
-            <div className="font-display text-3xl font-bold text-primary sm:text-4xl">
+            <div className="whitespace-nowrap font-display text-2xl font-bold text-primary sm:text-4xl">
               <NumberTicker value={720} />p
             </div>
             <p className="mt-1 text-xs text-muted-foreground/70">two-pass H.264</p>
