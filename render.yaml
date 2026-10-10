@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: statusfix
+    env: node
+    buildCommand: npm install --prefix server && npm install --prefix client && npm run client:build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_ORIGIN
+        value: "*"

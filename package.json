@@ -1,0 +1,19 @@
+{
+  "name": "statusfix",
+  "version": "2.0.0",
+  "private": true,
+  "description": "WhatsApp Status media optimizer — sharp images and smooth videos, sized under WhatsApp's status limits.",
+  "scripts": {
+    "start": "npm --prefix server start",
+    "dev": "npm --prefix server run dev",
+    "client:dev": "npm --prefix client run dev",
+    "client:build": "npm --prefix client run build",
+    "client:preview": "npm --prefix client run preview",
+    "server:start": "npm --prefix server start",
+    "server:dev": "npm --prefix server run dev",
+    "install:all": "npm install --prefix server && npm install --prefix client"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

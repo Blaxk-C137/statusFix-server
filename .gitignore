@@ -1,0 +1,53 @@
+# ─── Dependencies ───────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.*
+
+# ─── Builds / output ────────────────────────────────────────────
+client/dist/
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# ─── Environment & secrets ──────────────────────────────────────
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# ─── Logs ───────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ─── Temp / OS junk ─────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+.cache/
+.playwright-mcp/
+coverage/
+.nyc_output/
+
+# ─── Editor ─────────────────────────────────────────────────────
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ─── Vercel / Render local state ────────────────────────────────
+.vercel
+.render/

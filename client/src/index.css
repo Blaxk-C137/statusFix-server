@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Deep, warm dark — OLED-friendly with a faint green tint */
+    --background: 168 14% 3%;
+    --foreground: 150 10% 94%;
+
+    --card: 165 12% 5%;
+    --card-foreground: 150 10% 94%;
+
+    --muted: 160 8% 12%;
+    --muted-foreground: 155 6% 55%;
+
+    --accent: 160 10% 15%;
+    --accent-foreground: 150 10% 92%;
+
+    /* WhatsApp green family */
+    --whatsapp: 142 70% 49%;        /* #25D366 equivalent */
+    --whatsapp-dim: 142 70% 49%;
+
+    --primary: 142 70% 49%;
+    --primary-foreground: 150 60% 6%;
+
+    --secondary: 160 10% 10%;
+    --secondary-foreground: 150 10% 85%;
+
+    --success: 142 70% 45%;
+    --success-foreground: 150 60% 6%;
+
+    --destructive: 0 84% 62%;
+    --destructive-foreground: 0 10% 95%;
+
+    --border: 160 9% 14%;
+    --input: 160 9% 14%;
+    --ring: 142 70% 49%;
+
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: hsl(142 70% 49% / 0.3);
+    color: hsl(150 10% 96%);
+  }
+
+  /* Slim, theme-matched scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(168 14% 4%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(160 9% 16%);
+    border-radius: 8px;
+    border: 2px solid hsl(168 14% 4%);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(142 40% 30%);
+  }
+}
+
+@layer utilities {
+  /* Gradient headline text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      100deg,
+      hsl(150 10% 96%) 0%,
+      hsl(142 70% 60%) 45%,
+      hsl(160 80% 55%) 100%
+    );
+  }
+
+  /* Glassy surface */
+  .glass {
+    background: hsl(165 12% 5% / 0.65);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid hsl(160 9% 16% / 0.8);
+  }
+
+  /* Fine grid texture (data-free, pure gradients) */
+  .bg-grid {
+    background-image:
+      linear-gradient(hsl(160 9% 14% / 0.35) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(160 9% 14% / 0.35) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+  }
+
+  /* Shimmering loading bar */
+  .progress-shimmer {
+    background: linear-gradient(
+      100deg,
+      hsl(142 70% 49%) 20%,
+      hsl(160 90% 60%) 40%,
+      hsl(142 70% 49%) 60%
+    );
+    background-size: 200% 100%;
+  }
+}
