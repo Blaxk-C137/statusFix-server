@@ -26,7 +26,7 @@ const SPECS = {
   },
 };
 
-export default function Optimizer() {
+export default function Optimizer({ bare = false }) {
   const [file, setFile] = useState(null);
   const [fileType, setFileType] = useState(null);
   const [status, setStatus] = useState("idle"); // idle | uploading | processing | done | error
@@ -122,20 +122,22 @@ export default function Optimizer() {
       : null;
 
   return (
-    <section id="optimizer" className="relative py-24 sm:py-32">
+    <section id="optimizer" className={bare ? "relative w-full" : "relative py-24 sm:py-32"}>
       {/* ambient section glow */}
       <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-primary/10 blur-[130px]" />
 
-      <div className="container max-w-2xl">
-        <div className="mb-10 text-center">
-          <p className="font-display text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-            The optimizer
-          </p>
-          <TextGenerateEffect
-            className="mx-auto max-w-md"
-            words="Drop it. We make it WhatsApp-proof."
-          />
-        </div>
+      <div className={bare ? "w-full" : "container max-w-2xl"}>
+        {!bare && (
+          <div className="mb-10 text-center">
+            <p className="font-display text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+              The optimizer
+            </p>
+            <TextGenerateEffect
+              className="mx-auto max-w-md"
+              words="Drop it. We make it WhatsApp-proof."
+            />
+          </div>
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 32 }}

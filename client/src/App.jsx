@@ -1,6 +1,5 @@
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Optimizer from "./components/Optimizer";
+import Landing from "./components/Landing";
 import Bento from "./components/Bento";
 import Specs3D from "./components/Specs3D";
 import Footer from "./components/Footer";
@@ -10,8 +9,8 @@ export default function App() {
     <div className="relative min-h-screen bg-background">
       <Navbar />
       <main>
-        <Hero />
-        <Optimizer />
+        {/* The service first — above the fold. Everything else is optional scroll. */}
+        <Landing />
         <Bento />
         <Specs3D />
       </main>
